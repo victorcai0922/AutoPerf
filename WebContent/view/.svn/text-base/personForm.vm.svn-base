@@ -1,0 +1,49 @@
+#parse("/control/meta.vm")
+<html> 
+    <head> 
+        <title>Adobocode : Sample Spring MVC using Forms</title> 
+    </head> 
+  
+    <body> 
+        <h2>Adobocode : Person Form</h2> 
+		 <form id="personForm" action="" method="post">
+			<input type="hidden" id="id" value="" />
+                <table> 
+                    <tr> 
+                        <td>Name</td> 
+                        <td><input type="text" id="name" value="" /></td> 
+                    </tr> 
+                    <tr> 
+                        <td>Age</td> 
+                        <td><input type="text" id="age" value="" /></td> 
+                    </tr> 
+                    <tr> 
+                        <td>Address</td> 
+                        <td><input type="text" id="address" value="" /></td> 
+                    </tr> 
+                    <tr> 
+                        <td></td> 
+                        <td> 
+                            <input type="button" id="save" name="save" value="Save" /> 
+                            <input type="submit" onClick="history.go(-1);" name="_eventId_cancel" value="Cancel" /> 
+                        </td> 
+                    </tr> 
+                </table> 
+        </form> 
+    </body> 
+</html>
+<script type="text/javascript">
+jQuery("#save").bind("click", function(){
+var requestData = $("#personForm").serialize();
+    	jQuery.ajax({
+					url : 'personForm.htm',
+					dataType: 'json',
+					data : requestData,
+					success : function(msg) {
+					
+					},
+					error : function(msg) {
+					}
+				});
+});
+</script>

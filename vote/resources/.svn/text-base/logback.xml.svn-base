@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="default_pattern" value="%date [%thread] %-5level %logger{30} - %msg%n" />
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoding>UTF-8</encoding>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoding>UTF-8</encoding>
+        <file>logs/ssmvc-web.log</file>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </layout>
+    </appender>
+        
+    <logger name="com.vote.web">
+        <level value="DEBUG" />
+    </logger>
+    <logger name="org.springframework">
+        <level value="WARN" />
+    </logger>
+    <logger name="org">
+        <level value="WARN" />
+    </logger>
+    <logger name="com.ibatis">
+        <level value="${log.sql.level:-WARN}" />
+    </logger>
+    <logger name="java.sql">
+        <level value="${log.sql.level:-WARN}" />
+    </logger>
+
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE" />
+    </root>
+</configuration>

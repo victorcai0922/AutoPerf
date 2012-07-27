@@ -1,0 +1,4 @@
+# MySQL
+mysql.jdbc.url=jdbc:mysql://10.132.17.26:3306/rnas2?useUnicode=true&amp;characterEncoding=UTF8
+mysql.jdbc.username=rnas
+mysql.jdbc.password=rnas

@@ -1,0 +1,13 @@
+#macro(getRequestBase)
+#if($request.contextPath != "")$request.contextPath#end
+#end
+
+#macro(getJsPath $jsPath)#getRequestBase()/js/$jsPath#end
+#macro(getCssPath $cssPath)#getRequestBase()/css/$cssPath#end
+#macro(getImgPath $imgPath)#getRequestBase()/img/$imgPath#end
+
+#macro(showDateTime $value)
+	$!dateUtil.format($value, 'yyyy-MM-dd HH:mm:ss')
+#end
+
+

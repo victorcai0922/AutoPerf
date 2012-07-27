@@ -1,0 +1,39 @@
+<div class="pagebar">
+    <span class="floatr" style="padding-top:4px;">显示第 ${query.pageFirstItem} - ${query.pageLastItem}条记录， 共 ${query.totalItem}条记录&nbsp;&nbsp;</span>
+    #if(${query.currentPage} != 1)
+        <a href="#" class="pageN" rel="1"><img src="${staticResoucePath}/img/pagination_first.png" /></a>
+    #else
+        <img src="${staticResoucePath}/img/pagination_first_gray.png" />
+    #end
+        
+    #if(${query.currentPage} != 1)
+        <a href="#" class="pageN" rel="$!{query.previousPage}"><img src="${staticResoucePath}/img/pagination_prev.png" /></a>
+    #else
+       <img src="${staticResoucePath}/img/pagination_prev_gray.png" />
+    #end
+    
+    #foreach($pageItem in ${query.buttonList})
+          #if(${query.currentPage} == $!{pageItem})
+            <a href="#" class="pageN" rel="$!{pageItem}"><font color='red'>$!{pageItem}</font></a>&nbsp;
+          #else
+            <a href="#" class="pageN" rel="$!{pageItem}">$!{pageItem}</a>&nbsp;
+          #end
+    #end   
+    
+    #if(${query.currentPage} != ${query.totalPage})
+        <a href="#" class="pageN" rel="$!{query.nextPage}"><img src="${staticResoucePath}/img/pagination_next.png" /></a>
+    #else
+        <img src="${staticResoucePath}/img/pagination_next_gray.png" />
+    #end
+    
+    #if(${query.currentPage} != ${query.totalPage})
+        <a href="#" class="pageN" rel="$!{query.totalPage}"><img src="${staticResoucePath}/img/pagination_last.png" /></a>
+    #else
+       <img src="${staticResoucePath}/img/pagination_last_gray.png" />
+    #end
+     
+    <span style="padding-left:20px;">&nbsp;&nbsp;第 ${query.currentPage}页，共 ${query.totalPage}页&nbsp;转到:
+        <input name="gotoPage" id="gotoPage" value="" type="text" size="2" maxlength="8" style="ime-mode: disabled;" />&nbsp;页
+        <input type="button" id="goButton" name="Go" value=" Go " class="go" rel="bottom"/>
+    </span>
+</div>

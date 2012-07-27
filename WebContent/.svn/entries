@@ -1,0 +1,74 @@
+10
+
+dir
+11
+svn://10.241.72.167:3690/svnRoot/trunk/vote/WebContent
+svn://10.241.72.167:3690/svnRoot
+
+
+
+2012-03-16T05:59:12.031250Z
+11
+admin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+60683bd7-0cbd-6243-bd41-a1835abedd26
+
+META-INF
+dir
+
+WEB-INF
+dir
+
+commons
+dir
+
+index.vm
+file
+
+
+
+
+2012-03-16T06:03:59.799000Z
+79789e2f1be265c2177ebc285759c97d
+2012-03-16T05:59:12.031250Z
+11
+admin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+128
+
+view
+dir
+

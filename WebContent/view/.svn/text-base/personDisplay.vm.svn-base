@@ -1,0 +1,24 @@
+<html> 
+    <head> 
+        <title>Adobocode : Sample Spring MVC using JSTL iteration</title> 
+    </head> 
+        <h2>Adobocode : Person List</h2> 
+        <table border="1"> 
+            <tr> 
+                <th>Id</th> 
+                <th>Name</th> 
+                <th>Age</th> 
+                <th>Address</th> 
+            </tr> 
+				#foreach($p in $personList)
+            <tr> 
+                <td> 
+                    <a href="personForm.htm?personId=${p.id}"/>${p.id}</a> 
+                </td> 
+                <td>${p.name}</td> 
+                <td>${p.age}</td> 
+                <td>${p.address}</td> 
+            </tr> 
+			#end
+        </table> 
+    </html>
